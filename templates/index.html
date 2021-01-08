@@ -1,0 +1,72 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <!-- <form> -->
+            <form action="{{ url_for('predict')}}" method="POST">
+                <div class="container">
+                    <h1 class="text-center">Car Predictive Analysis</h1>
+                    <h1>Name of Car</h1>
+                    <select name="Car_name" id="car" required>
+                        <option value="MarutiSwift">Maruti Swift	</option>
+                        <option value="MarutiAlto">Maruti Alto</option>
+                        <option value="MarutiWagon">Maruti Wagon</option>
+                        <option value="Hyundaii20">Hyundaii 20</option>
+                        <option value="HyundaiVerna">Hyundai Verna</option>
+                        <option value="HyundaiGrand">Hyundai Grand</option>
+                        <option value="HyundaiSantro">Hyundai Santro</option>
+                        <option value="ToyotaInnova">Toyota Innova</option>
+                        <option value="HyundaiEON">Hyundai EON</option>
+                        <option value="TataIndica">Tata Indica</option>
+                    </select>
+                    <h2>Purchased Year</h2>
+                    <input id="first" name="Year" type="number" min="1990" max="2020" required>
+                    <h2>KM's Travelled</h2>
+                    <input id="second" name="kms" type="number" min="0" required>
+                    <h2>How Many Previous Owners</h2>
+                    <input id="fourth" name="owners" type="number" min="0" max="5" required>
+                    <h2>Fuel Type</h2>
+                    <select name="Fuel_Type_Petrol" id="fuel" required>
+                        <option value="Petrol">Petrol</option>
+                        <option value="Diesel">Diesel</option>
+                        <option value="Diesel">CNG</option>
+                        <option value="Diesel">LPG</option>
+                        <option value="Diesel">Electric</option>
+                    </select>
+                    <h2>Dealer or Individual</h2>
+                    <select name="dealer" id="dealer" required>
+                        <option value="dealer">Dealer</option>
+                        <option value="individual">Individual</option>
+                    </select>
+                    <h2>Type Of Transmission</h2>
+                    <select name="Transmission" id="Transmission">
+                        <option value="manual">Manual</option>
+                        <option value="automatic">Automatic</option>
+                    </select><br><br>
+                    <input type="submit" name='predict' id='predict' value="Predict">
+
+                    <h2 class="text-center">{{ prediction_text }}</h2>
+
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+<style>
+                    body {
+                        background-image: url('https://thumbs.dreamstime.com/z/car-label-used-blue-background-concept-sell-selling-secondary-market-hand-to-128811523.jpg');
+                         background-size: cover;
+                         background-size: 110% 110%}
+
+</style>
+<style>
+                    h1 {text-align: center;}
+                    h2{text-align: center;}
+                    div {text-align: center;}
+
+</style>
+
